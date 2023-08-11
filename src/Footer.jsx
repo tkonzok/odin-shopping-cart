@@ -31,7 +31,7 @@ function Footer() {
             </p>
             <img src={Phone} alt="Phone icon" width="32px" className="phone" />
             <p>+49 (0) 4531 679446</p>
-            <a href="mailto:konzok.tobias@gmail.com">
+            <a href="mailto:commander@nilpfred.de">
               <img
                 src={Email}
                 alt="Email icon"
@@ -86,8 +86,8 @@ function Footer() {
 
           <img
             srcSet="
-            http://www.cbernardy.de/nilpfred/assets/img/bandfoto_Drage.jpg 768w,
-            http://www.cbernardy.de/nilpfred/assets/img/bandfoto_Drage.jpg 480w
+            https://www.cbernardy.de/nilpfred/assets/img/bandfoto_Drage.jpg 768w,
+            https://www.cbernardy.de/nilpfred/assets/img/bandfoto_Drage.jpg 480w
           "
             sizes="
           (max-width: 48em) 100vw,

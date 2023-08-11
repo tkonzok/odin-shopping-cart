@@ -18,8 +18,8 @@ function Header() {
       <header>
         <img
           srcSet="
-        http://www.cbernardy.de/nilpfred/assets/img/Bandfoto2021_CommanderNilpfred_Foto-ChristophSchwencke+.jpg 768w,
-        http://www.cbernardy.de/nilpfred/assets/img/Bandfoto2021_CommanderNilpfred_Foto-ChristophSchwencke+.jpg 480w
+        https://www.cbernardy.de/nilpfred/assets/img/Bandfoto2021_CommanderNilpfred_Foto-ChristophSchwencke+.jpg 768w,
+        https://www.cbernardy.de/nilpfred/assets/img/Bandfoto2021_CommanderNilpfred_Foto-ChristophSchwencke+.jpg 480w
       "
           sizes="
       (max-width: 48em) 100vw,
