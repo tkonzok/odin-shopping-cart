@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --petrol: #64a19d;
+  --yellow: #f7ff00;
+  --navbar-height: 60px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+nav {
+  position: fixed;
+  line-height: 0;
+  top: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  padding: 0 max(2rem, calc((100vw - 1000px) * 0.5));
+  display: flex;
+  align-items: center;
+  background-color: #f1f11f;
+  color: #fff;
+}
+
+nav h2 {
+  margin-right: auto;
+  color: #000;
+}
+
+header {
+  margin-top: var(--navbar-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--petrol);
+  color: #000;
+}
+
+.band-img {
+  width: 100%;
+}
+
+.album-img {
+  width: min(80%, 320px);
+  box-shadow: 2px 2px 10px 2px #000000;
+  margin: 0.5rem 0 1rem;
+}
+
+iframe {
+  margin: 0.5rem 0 1rem;
+}
+
+h1 {
+  color: #e5e5f7;
+  margin-top: clamp(-7rem, -0.1428rem - 14.2857vw, -3rem);
+  margin-bottom: 0;
+  font-size: clamp(2rem, calc(0.2143rem + 8.9285vw), 4.5rem);
+  width: max(320px, 100vw);
+  height: clamp(3rem, 0.1428rem + 14.2857vw, 7rem);
+  text-align: center;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+article {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+article h2 {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+article p {
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+header .links {
+  padding: 1rem 2rem;
+}
+
+main {
+  flex: auto;
+  box-shadow:
+    10px 0 10px 0 #00000070,
+    10px 0 10px 0 #00000040;
+  z-index: 2;
+  min-height: 700px;
+  background-image: url("http://www.cbernardy.de/nilpfred/assets/img/Logo_weiss_auf-schwarz_square.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main h2 {
+  color: #e5e5f7;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, max-content);
+  align-items: center;
+  gap: 2rem 0;
+  margin-bottom: 50px;
+}
+
+.tile {
+  display: grid;
+  grid-template-columns: min(calc(100vw - 2rem), 600px);
+  grid-template-rows: 1fr auto;
+}
+
+.project-info {
+  box-shadow: 2px 2px 10px 2px #000000;
+  display: grid;
+  grid-template-columns: 1fr 48px 48px;
+  grid-template-rows: auto;
+  padding: 0 1rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.project-info > a {
+  text-align: center;
+  align-self: center;
+}
+
+.project-info > p,
+.project-info > ul {
+  grid-column: span 3;
+  text-align: top;
+  margin-top: 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+body div > footer {
+  background-color: #f1f11f;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.live-img {
+  width: 100%;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  padding: 2rem 1rem 0;
+}
+
+.info * {
+  margin: 0.5rem 0;
+  align-self: center;
+}
+
+.span {
+  grid-column: span 2;
+}
+
+a {
+  transition: transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover:not(.project-screenshot-link) {
+  transform: scale(1.1);
+}
+
+/* TABLET */
+@media (min-width: 48em) {
+  header {
+    display: grid;
+    grid-template-columns: clamp(352px, 40%, 400px) auto;
+    grid-template-rows: auto auto 1fr;
+  }
+
+  .band-img {
+    grid-area: 2 / 1;
+    width: 320px;
+    margin: 16px auto;
+    box-shadow: 2px 2px 10px 2px #000000;
+  }
+
+  h1 {
+    grid-area: 1 / 1 / span 1 / span 2;
+    margin: 0;
+    color: #000;
+    font-size: clamp(2.5rem, 0.3571rem + 10.714vw, 3rem);
+    width: 100%;
+    height: auto;
+    background: #00000000;
+  }
+
+  .quotes {
+    grid-area: 3 / 1;
+  }
+
+  .about {
+    grid-area: 2 / 2 / span 2;
+    margin-bottom: auto;
+  }
+
+  .grid-container {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, 320px);
+    gap: 2rem 1rem;
+    justify-content: center;
+  }
+
+  .tile {
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px 200px;
+  }
+
+  .project-info {
+    grid-template-columns: auto 48px 48px;
+    grid-template-rows: 64px auto;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  body > div > footer {
+    margin: auto;
+    display: flex;
+  }
+
+  .footer-container {
+    max-width: 1340px;
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: 400px;
+    justify-content: end;
+  }
+
+  .live-img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info * {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    align-self: center;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+  header {
+    grid-template-columns: 400px 600px;
+    margin: auto;
+    margin-top: var(--navbar-height);
+    justify-content: center;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info * {
+    max-height: 400px;
+    margin: 0;
+  }
+}

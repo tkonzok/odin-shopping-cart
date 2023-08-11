@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Tyrannopotamus Rex (CD)",
+      "subtitle": "Tyrannopotomatische Compact Disc + Digitales Album",
+      "price": 10.0,
+      "stock": 100,
+      "published": 2021,
+      "description": "Old school as old school can! Mit 16-seitigem, voll farbigem Booklet. Voller toller Infos und nicer Illus und Fotos und mit allen Texten zum Mitlesen, einstudieren und mitsingen! Enthält unbegrenztes Streaming von Tyrannopotamus Rex über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/0026192839_10.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 107
+      }
+    },
+    {
+      "id": 2,
+      "title": "Tyrannopotamus Rex (MC)",
+      "subtitle": "Limitierte Kassette + Digitales Album",
+      "price": 10.0,
+      "stock": 4,
+      "published": 2021,
+      "description": "Alles DIY, soviel Gebastel.... Es ist alles für Dich vorbereitet, nur Spulen musst Du selbst! Enthält unbegrenztes Streaming von Tyrannopotamus Rex über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/0026057262_10.jpg",
+      "rating": {
+        "rate": 4.5,
+        "count": 33
+      }
+    },
+    {
+      "id": 3,
+      "title": "Tyrannopotamus Rex (Fake LP)",
+      "subtitle": "Fake Platte + Digitales Album",
+      "price": 15.0,
+      "stock": 5,
+      "published": 2021,
+      "description": "Sieht aus wie eine LP, mit tollem Cover und allem Pipapo. Sieht spitzenmäßig aus im Plattenschrank. Ist auch VInyl drin, aber kein Tyrannopotamus Rex drauf. Nur für Poser. Aber das richtig! Enthält unbegrenztes Streaming von Tyrannopotamus Rex über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/0026192775_10.jpg",
+      "rating": {
+        "rate": 4.9,
+        "count": 56
+      }
+    },
+    {
+      "id": 4,
+      "title": "Knapp (EP)",
+      "subtitle": "Digitale EP",
+      "price": 1.0,
+      "stock": 100,
+      "published": 2023,
+      "description": "Enthält unbegrenztes Streaming über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/a4012969448_10.jpg",
+      "rating": {
+        "rate": 4.3,
+        "count": 22
+      }
+    },
+    {
+      "id": 5,
+      "title": "Heiter (Single)",
+      "subtitle": "Digitale Single",
+      "price": 1.0,
+      "stock": 100,
+      "published": 2021,
+      "description": "Enthält unbegrenztes Streaming über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/a4236360773_10.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 244
+      }
+    }
+  ]
+}
