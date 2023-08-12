@@ -13,6 +13,7 @@ import Instagram from "./assets/instagram.svg";
 import Youtube from "./assets/youtube.svg";
 import BandImg from "./assets/band-img.jpg";
 import Album from "./assets/album.png";
+import Bandinfo from "./assets/bandinfo.pdf";
 
 function Header() {
   return (
@@ -31,23 +32,25 @@ function Header() {
         <article className="about">
           <h2>Commander Who?</h2>
           <p>
-            Tyrannopötamus Rex ist das Debutalbum des Commanders auf STEREOLA.
-            Geboren am 24. September 2021 mit einem Gewicht von 16 Titeln und
-            einer Größe von 32:14 Minuten. Wegen der Pandemie und einer Reihe
-            anderer, schwieriger Umstände war es eine relativ schwere Geburt.
-            Bernd, Felix, Jasper und Tobi sind trotzdem sehr stolz auf ihren
-            kleinen Racker!
+            Der Commander macht Powerpoppunkrock (also wohl eher Punkpop als
+            Poppunk) mit Akustikgitarre. Auf deutsch. Seit 2016. Deutlich
+            flotter als man das von einem Nilpfred vermuten würde. Die Commander
+            (vlnr) sind:
           </p>
-          <img src={Album} alt="Album Picture" className="album-img" />
+          <ul>
+            <li>Jasper (Schlagzeug und Gesang)</li>
+            <li>Tobi (Akustikgitarre und Gesang)</li>
+            <li>Bernd (Gesang und Bass)</li>
+            <li>Felix (E-Gitarre und Gesang)</li>
+          </ul>
           <p>
-            Anzuhören gibt es den T-Rex analog auf CD und MC. Oder digital als
-            Fake-LP und auf den üblichen Kanälen. Z.B. hier:
+            immer gut gelaunt, aber nicht in der Lage, schlüssig zu erklären,{" "}
+            <em>"was der Scheißname bedeutet."</em>
           </p>
-          <iframe
-            width="100%"
-            height="52"
-            src="https://odesli.co/embed/?url=https%3A%2F%2Falbum.link%2Fi%2F1587016663&amp;theme=light"
-          ></iframe>
+          <p>Mehr steht in der</p>
+          <a href={Bandinfo} className="bandinfo">
+            einigermaßen aktuellen Bandinfo (PDF)
+          </a>
         </article>
         <article className="quotes">
           <em>
@@ -69,49 +72,49 @@ function Header() {
             für zusätzlichen Schwung.”
           </em>
           <p>(blueprint-fanzine)</p>
-          <footer className="links">
-            <a href="https://nilpfred.de">
-              <img
-                src={House}
-                alt="Homepage icon"
-                width="48px"
-                className="website"
-              />
-            </a>
-            <a href="https://stereola.bandcamp.com/">
-              <img
-                src={Music}
-                alt="Bandcamp icon"
-                width="48px"
-                className="bandcamp"
-              />
-            </a>
-            <a href="https://www.facebook.com/nilpfred">
-              <img
-                src={Facebook}
-                alt="Facebook icon"
-                width="48px"
-                className="facebook"
-              />
-            </a>
-            <a href="https://www.instagram.com/commander_nilpfred/">
-              <img
-                src={Instagram}
-                alt="Instagram icon"
-                width="48px"
-                className="instagram"
-              />
-            </a>
-            <a href="https://www.youtube.com/results?search_query=commander+nilpfred">
-              <img
-                src={Youtube}
-                alt="YouTube icon"
-                width="48px"
-                className="youtube"
-              />
-            </a>
-          </footer>
         </article>
+        <footer className="links">
+          <a href="https://nilpfred.de">
+            <img
+              src={House}
+              alt="Homepage icon"
+              width="48px"
+              className="website"
+            />
+          </a>
+          <a href="https://stereola.bandcamp.com/">
+            <img
+              src={Music}
+              alt="Bandcamp icon"
+              width="48px"
+              className="bandcamp"
+            />
+          </a>
+          <a href="https://www.facebook.com/nilpfred">
+            <img
+              src={Facebook}
+              alt="Facebook icon"
+              width="48px"
+              className="facebook"
+            />
+          </a>
+          <a href="https://www.instagram.com/commander_nilpfred/">
+            <img
+              src={Instagram}
+              alt="Instagram icon"
+              width="48px"
+              className="instagram"
+            />
+          </a>
+          <a href="https://www.youtube.com/results?search_query=commander+nilpfred">
+            <img
+              src={Youtube}
+              alt="YouTube icon"
+              width="48px"
+              className="youtube"
+            />
+          </a>
+        </footer>
       </header>
     </>
   );
