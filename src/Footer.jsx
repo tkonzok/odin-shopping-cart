@@ -86,8 +86,8 @@ function Footer() {
 
           <img
             srcSet="
-            https://www.cbernardy.de/nilpfred/assets/img/bandfoto_Drage.jpg 768w,
-            https://www.cbernardy.de/nilpfred/assets/img/bandfoto_Drage.jpg 480w
+            ../src/assets/live-img.jpg 768w,
+            ../src/assets/live-img.jpg 480w
           "
             sizes="
           (max-width: 48em) 100vw,

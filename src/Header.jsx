@@ -18,8 +18,8 @@ function Header() {
       <header>
         <img
           srcSet="
-        https://www.cbernardy.de/nilpfred/assets/img/Bandfoto2021_CommanderNilpfred_Foto-ChristophSchwencke+.jpg 768w,
-        https://www.cbernardy.de/nilpfred/assets/img/Bandfoto2021_CommanderNilpfred_Foto-ChristophSchwencke+.jpg 480w
+          ../src/assets/band-img.jpg 768w,
+          ../src/assets/band-img.jpg 480w
       "
           sizes="
       (max-width: 48em) 100vw,
@@ -40,7 +40,7 @@ function Header() {
             kleinen Racker!
           </p>
           <img
-            src="https://album.link/_next/image?url=https%3A%2F%2Fis3-ssl.mzstatic.com%2Fimage%2Fthumb%2FMusic115%2Fv4%2F66%2Fe2%2F78%2F66e278c8-4895-12ec-53fc-58d4ef0d51ec%2Fsource%2F512x512bb.jpg&w=1080&q=75"
+            src="../src/assets/album.png"
             alt="Album Picture"
             className="album-img"
           />
