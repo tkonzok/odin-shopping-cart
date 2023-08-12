@@ -11,16 +11,15 @@ import Music from "./assets/music.svg";
 import Facebook from "./assets/facebook.svg";
 import Instagram from "./assets/instagram.svg";
 import Youtube from "./assets/youtube.svg";
+import BandImg from "./assets/band-img.jpg";
+import Album from "./assets/album.png";
 
 function Header() {
   return (
     <>
       <header>
         <img
-          srcSet="
-          ../src/assets/band-img.jpg 768w,
-          ../src/assets/band-img.jpg 480w
-      "
+          srcSet={`${BandImg} 768w, ${BandImg} 480w`}
           sizes="
       (max-width: 48em) 100vw,
       480px
@@ -39,11 +38,7 @@ function Header() {
             Bernd, Felix, Jasper und Tobi sind trotzdem sehr stolz auf ihren
             kleinen Racker!
           </p>
-          <img
-            src="../src/assets/album.png"
-            alt="Album Picture"
-            className="album-img"
-          />
+          <img src={Album} alt="Album Picture" className="album-img" />
           <p>
             Anzuhören gibt es den T-Rex analog auf CD und MC. Oder digital als
             Fake-LP und auf den üblichen Kanälen. Z.B. hier:

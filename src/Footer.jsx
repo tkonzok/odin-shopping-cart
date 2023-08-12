@@ -11,6 +11,7 @@ import Music from "./assets/music.svg";
 import Facebook from "./assets/facebook.svg";
 import Instagram from "./assets/instagram.svg";
 import Youtube from "./assets/youtube.svg";
+import LiveImg from "./assets/live-img.jpg";
 
 function Footer() {
   return (
@@ -85,10 +86,7 @@ function Footer() {
           </div>
 
           <img
-            srcSet="
-            ../src/assets/live-img.jpg 768w,
-            ../src/assets/live-img.jpg 480w
-          "
+            srcSet={`${LiveImg} 768w, ${LiveImg} 480w`}
             sizes="
           (max-width: 48em) 100vw,
           480px
