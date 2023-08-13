@@ -64,6 +64,19 @@ header {
   margin: 0.5rem 0 1rem;
 }
 
+.sliding-in.right {
+  transform: translateX(160px);
+  animation: come-in 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes come-in {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 iframe {
   margin: 0.5rem 0 1rem;
   max-width: 80%;
@@ -272,6 +285,12 @@ a:hover:not(.project-screenshot-link) {
     width: 320px;
     margin: 16px auto;
     box-shadow: 2px 2px 10px 2px #000000;
+  }
+
+  .sliding-in.left {
+    transform: translateX(-160px);
+    animation: come-in 1s ease forwards;
+    opacity: 0;
   }
 
   h1 {

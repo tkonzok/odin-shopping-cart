@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 import "./normalize.css";
 import "./style.css";
 import Email from "./assets/email.svg";
@@ -15,19 +16,31 @@ import BandImg from "./assets/band-img.jpg";
 import Album from "./assets/album.png";
 import Bandinfo from "./assets/bandinfo.pdf";
 
+function SlidingIn() {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
+  return (
+    <img
+      ref={ref}
+      srcSet={`${BandImg} 768w, ${BandImg} 480w`}
+      sizes="
+      (max-width: 48em) 100vw,
+      480px
+      "
+      alt="Band Picture"
+      className={inView ? "band-img sliding-in left" : "band-img"}
+    />
+  );
+}
+
 function Header() {
   return (
     <>
       <header>
-        <img
-          srcSet={`${BandImg} 768w, ${BandImg} 480w`}
-          sizes="
-      (max-width: 48em) 100vw,
-      480px
-      "
-          alt="Band Picture"
-          className="band-img"
-        />
+        <SlidingIn />
         <h1>Commander Nilpfred</h1>
         <article className="about">
           <h2>Commander Who?</h2>

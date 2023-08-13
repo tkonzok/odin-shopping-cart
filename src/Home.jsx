@@ -1,10 +1,58 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import "./normalize.css";
 import "./style.css";
 import Album from "./assets/album.png";
 
+function SlidingIn() {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
+  return (
+    <img
+      ref={ref}
+      src={Album}
+      alt="Album Picture"
+      className={inView ? "album-img sliding-in right" : "album-img"}
+    />
+  );
+}
+
 function Home() {
+  /*
+  const useElementOnScreen = (options) => {
+    const containerRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    const callbackFunction = (entries) => {
+      const [entry] = entries;
+      setIsVisible(entry.isIntersecting);
+    };
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(callbackFunction, options);
+      if (containerRef.current) observer.observe(containerRef.current);
+
+      return () => {
+        if (containerRef.current) observer.unobserve(containerRef.current);
+      };
+    }, [containerRef, options]);
+
+    return [containerRef, isVisible];
+  };
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+
+  const [containerRef, isVisible] = useElementOnScreen(options);
+  */
+
   return (
     <>
       <main>
@@ -18,7 +66,7 @@ function Home() {
             Bernd, Felix, Jasper und Tobi sind trotzdem sehr stolz auf ihren
             kleinen Racker!
           </p>
-          <img src={Album} alt="Album Picture" className="album-img" />
+          <SlidingIn />
           <p>
             Anzuhören gibt es den T-Rex analog auf CD und MC. Oder digital als
             Fake-LP und auf den üblichen Kanälen. Z.B. hier:
