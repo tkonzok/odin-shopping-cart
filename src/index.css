@@ -30,7 +30,7 @@ body {
   min-width: 320px;
   width: 100vw;
   min-height: 100vh;
-  min-height: -webkit-fill-avvailable;
+  min-height: -webkit-fill-available;
   max-width: 100%;
   background-color: #000;
 }
