@@ -20,12 +20,17 @@
   box-sizing: border-box;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-width: 320px;
   width: 100vw;
   min-height: 100vh;
+  min-height: -webkit-fill-avvailable;
   max-height: 100%;
   max-width: 100%;
   background-color: #000;

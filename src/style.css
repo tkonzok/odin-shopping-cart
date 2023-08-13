@@ -44,6 +44,25 @@ nav h2 {
   color: #000;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 3%;
+  right: 4%;
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--petrol);
+  color: #fff;
+  box-shadow: 1px 1px 10px #000000;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+}
+
 header {
   margin-top: var(--navbar-height);
   display: flex;
