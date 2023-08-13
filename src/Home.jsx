@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import "./normalize.css";
 import "./style.css";
 import Album from "./assets/album.png";
+import Header from "./Header.jsx";
 
 function SlidingIn() {
   const { ref, inView, entry } = useInView({
@@ -24,9 +25,10 @@ function SlidingIn() {
 function Home() {
   return (
     <>
+      <Header />
       <main>
         <section className="content">
-          <h2>Home</h2>
+          <h2>Tyrannopötamus Rex</h2>
           <p>
             Tyrannopötamus Rex ist das Debutalbum des Commanders auf STEREOLA.
             Geboren am 24. September 2021 mit einem Gewicht von 16 Titeln und
@@ -45,7 +47,6 @@ function Home() {
             height="52"
             src="https://odesli.co/embed/?url=https%3A%2F%2Falbum.link%2Fi%2F1587016663&amp;theme=light"
           ></iframe>
-          <div className="grid-container"></div>
         </section>
       </main>
     </>

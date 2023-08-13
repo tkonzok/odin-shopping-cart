@@ -37,6 +37,7 @@ nav {
   align-items: center;
   background-color: #f1f11f;
   color: #fff;
+  z-index: 100;
 }
 
 nav h2 {
@@ -188,52 +189,18 @@ main h2 {
 
 .content > p {
   background-color: #000000aa;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, max-content);
-  align-items: center;
-  gap: 2rem 0;
-  margin-bottom: 50px;
-}
-
-.tile {
-  display: grid;
-  grid-template-columns: min(calc(100vw - 2rem), 600px);
-  grid-template-rows: 1fr auto;
-}
-
-.project-info {
-  box-shadow: 2px 2px 10px 2px #000000;
-  display: grid;
-  grid-template-columns: 1fr 48px 48px;
-  grid-template-rows: auto;
-  padding: 0 1rem;
+  text-align: center;
 }
 
 ul {
   margin: 0;
   padding: 0;
-  padding-left: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
-}
-
-.project-info > a {
-  text-align: center;
-  align-self: center;
-}
-
-.project-info > p,
-.project-info > ul {
-  grid-column: span 3;
-  text-align: top;
-  margin-top: 0;
 }
 
 .links {
@@ -341,23 +308,6 @@ a:hover:not(.project-screenshot-link) {
   .bandinfo {
     grid-area: 4 / 2;
     margin: 0;
-  }
-
-  .grid-container {
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, 320px);
-    gap: 2rem 1rem;
-    justify-content: center;
-  }
-
-  .tile {
-    grid-template-columns: 1fr;
-    grid-template-rows: 240px 200px;
-  }
-
-  .project-info {
-    grid-template-columns: auto 48px 48px;
-    grid-template-rows: 64px auto;
   }
 
   h3 {
