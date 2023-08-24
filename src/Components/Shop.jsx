@@ -5,16 +5,21 @@ import "../styles/style.css";
 import MinusCircle from "../assets/Icons/minus-circle.svg";
 import PlusCircle from "../assets/Icons/plus-circle.svg";
 import Star from "../assets/Icons/star_yellow.svg";
+import CartArrowDown from "../assets/Icons/cart-arrow-down.svg";
 
-function Product({ article }) {
+function Product({ article, addToCart }) {
   const [amount, setAmount] = article.stock > 0 ? useState(1) : useState(0);
 
   const handleClickDecrease = () => {
-    if (amount > 0) setAmount(amount - 1);
+    if (amount > 1) setAmount(amount - 1);
   };
 
   const handleClickIncrease = () => {
     if (amount < article.stock) setAmount(amount + 1);
+  };
+
+  const handleClickAddToCart = () => {
+    if (amount > 0) return addToCart(article, amount);
   };
 
   return (
@@ -57,7 +62,9 @@ function Product({ article }) {
       <div
         className={article.stock == 0 ? "add-to-cart sold-out" : "add-to-cart"}
       >
-        <button>ADD TO CART</button>
+        <button onClick={handleClickAddToCart}>
+          <img src={CartArrowDown}></img> <span>ADD TO CART</span>
+        </button>
       </div>
     </div>
   );
@@ -67,11 +74,33 @@ function Shop() {
   const {
     cart: [cart, setCart],
     articles: articles,
+    cartVisibility: [cartVisible, setCartVisible],
   } = useOutletContext();
+
+  const addToCart = (article, amount) => {
+    if (cart.filter((item) => item.id === article.id).length > 0) {
+      setCart(
+        cart.map((item) =>
+          item.id === article.id
+            ? { ...item, amount: item.amount + amount }
+            : item
+        )
+      );
+    } else {
+      setCart([...cart, { id: article.id, amount: amount }]);
+    }
+    setCartVisible(true);
+  };
 
   let Products = [];
   for (let i = 0; i < articles.length; i++) {
-    Products.push(<Product key={articles[i].id} article={articles[i]} />);
+    Products.push(
+      <Product
+        key={articles[i].id}
+        article={articles[i]}
+        addToCart={addToCart}
+      />
+    );
   }
 
   return (

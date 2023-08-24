@@ -9,16 +9,11 @@ import "./styles/normalize.css";
 import "./styles/style.css";
 
 function App() {
-  const [refHero, inViewHero] = useInView({
-    threshold: 0,
-    delay: 0,
-  });
-
-  const [cartVisible, setCartVisible] = useState(true); // to be changed after development
+  const [cartVisible, setCartVisible] = useState(false);
   const [cart, setCart] = useState([
     { id: 0, amount: 1 },
     { id: 5, amount: 1 },
-  ]); // to be changed after development
+  ]);
 
   function toggleCart(cartState) {
     setCartVisible(cartState);
@@ -31,7 +26,7 @@ function App() {
   return (
     <>
       <Header
-        inViewHero={inViewHero}
+        inViewHero={false}
         cartVisible={cartVisible}
         toggleCart={toggleCart}
         cart={cart}
@@ -39,10 +34,10 @@ function App() {
         removeArticleFromCart={removeArticleFromCart}
       />
       <Outlet
-        ref={refHero}
         context={{
           cart: [cart, setCart],
           articles: Dataset.data,
+          cartVisibility: [cartVisible, setCartVisible],
         }}
       />
       <Footer />

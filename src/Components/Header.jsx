@@ -5,8 +5,7 @@ import House from "../assets/Icons/home.svg";
 import HouseWhite from "../assets/Icons/home_white.svg";
 import Dollar from "../assets/Icons/dollar.svg";
 import DollarWhite from "../assets/Icons/dollar_white.svg";
-import MenuIcon from "../assets/Icons/menu.svg";
-import MenuIconWhite from "../assets/Icons/menu_white.svg";
+import CartOutline from "../assets/Icons/cart-outline.svg";
 import ArrowUp from "../assets/Icons/arrow-up-bold-circle.svg";
 
 function Header({
@@ -32,6 +31,10 @@ function Header({
       </button>
     );
   }
+
+  const handleToggleCart = () => {
+    toggleCart(!cartVisible);
+  };
 
   function CartItem({ amount, article, removeArticleFromCart }) {
     const handleClick = () => {
@@ -68,15 +71,59 @@ function Header({
       );
     }
 
-    return (
-      <>
-        {Products.length > 0 && <div className="cart-sidebar">{Products}</div>}
-        {Products.length == 0 && (
-          <div className="cart-sidebar">
-            <p>Your cart is empty</p>
+    const continueShopping = () => {
+      toggleCart(false);
+    };
+
+    const Sum = () => {
+      let subtotal = 0;
+      for (let item of cart) {
+        let price = articles.find((article) => article.id === item.id).price;
+        subtotal += price * item.amount;
+      }
+      const shipping = 4.99;
+      const vat = Math.round((subtotal + shipping) * 19) / 100;
+      const total = subtotal + shipping + vat;
+
+      return (
+        <>
+          <div className="subtotal">
+            <span>Subtotal:</span>
+            <span>€ {subtotal}</span>
           </div>
+          <div className="shipping">
+            <span>Shipping:</span>
+            <span>€ {shipping}</span>
+          </div>
+          <div className="vat">
+            <span>VAT 19%:</span>
+            <span>€ {vat.toFixed(2)}</span>
+          </div>
+          <div className="total">
+            <span>Total:</span>
+            <span>€ {total}</span>
+          </div>
+        </>
+      );
+    };
+
+    return (
+      <div
+        className={cartVisible ? "cart-sidebar visible" : "cart-sidebar hidden"}
+      >
+        <div className="articles">
+          {Products.length > 0 ? Products : <p>Your cart is empty</p>}
+        </div>
+        {Products.length > 0 && (
+          <>
+            <div className="sum">
+              <Sum />
+            </div>
+            <button>Go To Checkout</button>
+          </>
         )}
-      </>
+        <button onClick={continueShopping}>Continue Shopping</button>
+      </div>
     );
   }
 
@@ -99,6 +146,12 @@ function Header({
             className="shop-icon"
           />
         </Link>
+        <a className="cart-icon" onClick={handleToggleCart}>
+          <img src={CartOutline} alt="Cart icon" width="48px" />
+          {cart.length > 0 && (
+            <span className="number-articles">{cart.length}</span>
+          )}
+        </a>
       </nav>
       <Arrow inViewHero={inViewHero} />
       <Cart
