@@ -1,17 +1,22 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
-import Nav from "./Nav.jsx";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import Nav from "./Components/Nav.jsx";
 import { Outlet } from "react-router-dom";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
-import "./normalize.css";
-import "./style.css";
+import Footer from "./Components/Footer.jsx";
+import "./styles/normalize.css";
+import "./styles/style.css";
 
 function App() {
+  const [refHero, inViewHero] = useInView({
+    threshold: 0,
+    delay: 0,
+  });
+
   return (
     <>
-      <Nav />
-      <Outlet />
+      <Nav inViewHero={inViewHero} />
+      <Outlet ref={refHero} />
       <Footer />
     </>
   );

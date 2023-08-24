@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Shop component > renders cart 0 on load 1`] = `
+<div>
+  <main>
+    <section
+      class="content"
+    >
+      <h2>
+        Shop
+      </h2>
+      <p>
+        Cart: 
+        0
+      </p>
+      <button>
+        Add Item
+      </button>
+    </section>
+  </main>
+</div>
+`;

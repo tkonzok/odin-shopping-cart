@@ -1,6 +1,21 @@
 {
   "data": [
     {
+      "id": 0,
+      "title": "Schlager Bernd - Die Sprache der Liebe",
+      "subtitle": "Example Subtitles",
+      "price": 4.99,
+      "stock": 0,
+      "published": 2013,
+      "description": "Die 1 Platte mit den 8 Sprachen der Liebe",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/a2840852962_16.jpg",
+      "rating": {
+        "rate": 3.2,
+        "count": 9
+      }
+    },
+    {
       "id": 1,
       "title": "Tyrannopotamus Rex (CD)",
       "subtitle": "Tyrannopotomatische Compact Disc + Digitales Album",

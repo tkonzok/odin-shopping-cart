@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --petrol: #619e9a;
+  --petrol-transparent: #619e9a90;
+  --petrol-dark: hsl(176, 24%, 25%);
+  --petrol-dark-transparent: #304f4d90;
+  --petrol-very-dark: hsl(176, 24%, 15%);
+  --petrol-very-dark-transparent: #1d2f2e90;
+  --yellow-50: #f7ff00;
+  --yellow-55: hsl(62, 100%, 55%);
+  --orange: #c36636;
+  --orange-dark: hsl(20, 57%, 25%);
+  --orange-light: hsl(20, 57%, 65%);
+  --navbar-height: 60px;
+  --footer-height: 60px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Slab", serif;
+  font-family: "League Spartan", sans-serif;
+  font-family: "Titillium Web", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #000;
+  background-image: url("../assets/images/logo_512.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: min(600px, 80%);
+  background-attachment: fixed;
+}
+
+#root {
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: linear-gradient(
+    300deg,
+    #00000090,
+    var(--petrol-very-dark-transparent),
+    var(--petrol-dark-transparent)
+  );
+  background-size: 180% 180%;
+  animation-name: gradient-animation;
+  animation-duration: 30s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a,
+a > img {
+  transition: transform 0.2s;
+}
+
+a:hover,
+a > img:hover {
+  transform: scale(1.1);
+}
+
+.arrow-up {
+  opacity: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: fixed;
+  z-index: 905;
+  bottom: 10%;
+  right: 5%;
+  cursor: pointer;
+  border: none;
+  background-color: #00000000;
+  font-size: 2.5rem;
+  transition: opacity 1s;
+}
+
+.arrow-up.shown {
+  opacity: 1;
+}
+
+/* NAV */
+
+nav {
+  position: fixed;
+  line-height: 0;
+  top: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "League Spartan", sans-serif;
+  color: #000;
+  z-index: 99;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px 2px #000;
+}
+
+/* HOME */
+
+/* SHOP */
+
+.shop-container {
+  width: 100%;
+  padding: calc(var(--navbar-height) + 32px) 5vw 32px;
+  min-height: calc(100vh - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "League Spartan", sans-serif;
+  color: #fff;
+}
+
+.products-container {
+  width: 100%;
+  padding: 32px;
+  gap: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(80vw, 320px));
+  grid-auto-rows: min(160vw, 640px);
+  justify-content: center;
+  align-items: center;
+}
+
+.product {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50% repeat(6, 1fr);
+  border-radius: 2px;
+  box-shadow: 2px 2px 10px 2px #000;
+  background-color: #fff;
+  color: #000;
+}
+
+.product > .image {
+  grid-column: span 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 2px 2px 10px 2px #000;
+}
+
+.product > * {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.product > .title {
+  grid-column: span 2;
+  font-weight: 700;
+}
+
+.product > .subtitle {
+  grid-column: span 2;
+}
+
+.product > .published {
+  grid-column: span 2;
+}
+
+.product > .price {
+  grid-column: span 2;
+  font-weight: 900;
+}
+
+.product > .price.sold-out {
+  color: #ccc;
+}
+
+.product > .stock {
+  grid-column: span 2;
+}
+
+.product > .stock.limited {
+  color: #a60;
+}
+
+.product > .stock.sold-out {
+  color: #a00;
+}
+
+.product > .rating {
+  grid-column: span 2;
+}
+
+.product > .amount {
+  gap: 16px;
+}
+
+.product > .add-to-cart {
+}
+
+.product > .add-to-cart > button {
+  background-color: #080;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.product > .add-to-cart.sold-out > button {
+  background-color: #a00;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.product > .add-to-cart:not(.sold-out) > button:hover {
+  box-shadow: 2px 2px 10px 2px #000;
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  height: var(--footer-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "League Spartan", sans-serif;
+  color: #000;
+  background-color: #fff;
+}
