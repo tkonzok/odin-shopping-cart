@@ -1,52 +1,61 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import "../styles/normalize.css";
 import "../styles/style.css";
-import Dataset from "../assets/data.json";
+import MinusCircle from "../assets/Icons/minus-circle.svg";
+import PlusCircle from "../assets/Icons/plus-circle.svg";
+import Star from "../assets/Icons/star_yellow.svg";
 
-function Product({ product }) {
-  const [amount, setAmount] = product.stock > 0 ? useState(1) : useState(0);
+function Product({ article }) {
+  const [amount, setAmount] = article.stock > 0 ? useState(1) : useState(0);
 
   const handleClickDecrease = () => {
     if (amount > 0) setAmount(amount - 1);
   };
 
   const handleClickIncrease = () => {
-    if (amount < product.stock) setAmount(amount + 1);
+    if (amount < article.stock) setAmount(amount + 1);
   };
 
   return (
     <div className="product">
-      <img className="image" src={product.image}></img>
-      <p className="title">{product.title}</p>
-      <p className="subtitle">{product.subtitle}</p>
+      <img className="image" src={article.image}></img>
+      <p className="artist">{article.artist}</p>
+      <p className="title">{article.title}</p>
+      <p className="subtitle">{article.subtitle}</p>
       <p className="published">
         {"("}
-        {product.published}
+        {article.published}
         {")"}
       </p>
-      <p className={product.stock == 0 ? "price sold-out" : "price"}>
-        € {product.price}
+      <p className={article.stock == 0 ? "price sold-out" : "price"}>
+        € {article.price}
       </p>
-      {product.stock > 4 && <p className="stock">Available</p>}
-      {product.stock > 0 && product.stock < 5 && (
-        <p className="stock limited">Less than 5 in stock</p>
+      {article.stock > 4 && <p className="stock">Available</p>}
+      {article.stock > 0 && article.stock < 5 && (
+        <p className="stock limited">Only {article.stock} items left</p>
       )}
-      {product.stock == 0 && <p className="stock sold-out">Out of stock</p>}
+      {article.stock == 0 && <p className="stock sold-out">Out of stock</p>}
       <p className="rating">
-        {product.rating.rate}/5{" "}
+        <img src={Star} width="24px"></img>{" "}
+        <span>{article.rating.rate}/5 </span>
         <span className="count">
-          {"("}
-          {product.rating.count}
+          {" ("}
+          {article.rating.count}
           {")"}
         </span>
       </p>
       <div className="amount">
-        <button onClick={handleClickDecrease}>-</button>
+        <button onClick={handleClickDecrease}>
+          <img src={MinusCircle}></img>
+        </button>
         <p>{amount}</p>
-        <button onClick={handleClickIncrease}>+</button>
+        <button onClick={handleClickIncrease}>
+          <img src={PlusCircle}></img>
+        </button>
       </div>
       <div
-        className={product.stock == 0 ? "add-to-cart sold-out" : "add-to-cart"}
+        className={article.stock == 0 ? "add-to-cart sold-out" : "add-to-cart"}
       >
         <button>ADD TO CART</button>
       </div>
@@ -55,11 +64,14 @@ function Product({ product }) {
 }
 
 function Shop() {
+  const {
+    cart: [cart, setCart],
+    articles: articles,
+  } = useOutletContext();
+
   let Products = [];
-  for (let i = 0; i < Dataset.data.length; i++) {
-    Products.push(
-      <Product key={Dataset.data[i].id} product={Dataset.data[i]} />
-    );
+  for (let i = 0; i < articles.length; i++) {
+    Products.push(<Product key={articles[i].id} article={articles[i]} />);
   }
 
   return (
