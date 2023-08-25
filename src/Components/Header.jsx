@@ -16,17 +16,14 @@ function Header({
   articles,
   removeArticleFromCart,
 }) {
-  function Arrow({ inViewHero }) {
+  function Arrow() {
     const handleClick = () => {
-      const firstPage = document.querySelector(".hero-container");
-      firstPage.scrollIntoView({ behavior: "smooth" });
+      const headline = document.querySelector("h1");
+      headline.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
-      <button
-        className={inViewHero ? "arrow-up" : "arrow-up shown"}
-        onClick={handleClick}
-      >
+      <button className="arrow-up shown" onClick={handleClick}>
         <img src={ArrowUp} alt="Arrow" />
       </button>
     );
@@ -70,11 +67,11 @@ function Header({
         />
       );
     }
-
+    /*
     const continueShopping = () => {
       toggleCart(false);
     };
-
+*/
     const Sum = () => {
       let subtotal = 0;
       for (let item of cart) {
@@ -89,19 +86,19 @@ function Header({
         <>
           <div className="subtotal">
             <span>Subtotal:</span>
-            <span>€ {subtotal.toFixed(2)}</span>
+            <span className="align-right">€ {subtotal.toFixed(2)}</span>
           </div>
           <div className="shipping">
             <span>Shipping:</span>
-            <span>€ {shipping.toFixed(2)}</span>
+            <span className="align-right">€ {shipping.toFixed(2)}</span>
           </div>
           <div className="vat">
             <span>VAT 19%:</span>
-            <span>€ {vat.toFixed(2)}</span>
+            <span className="align-right">€ {vat.toFixed(2)}</span>
           </div>
           <div className="total">
             <span>Total:</span>
-            <span>€ {total.toFixed(2)}</span>
+            <span className="align-right">€ {total.toFixed(2)}</span>
           </div>
         </>
       );
@@ -119,12 +116,19 @@ function Header({
             <div className="sum">
               <Sum />
             </div>
-            <Link to="checkout" cart={cart} articles={articles}>
-              <button>Go To Checkout</button>
+            <Link
+              to="checkout"
+              cart={cart}
+              articles={articles}
+              id="go-to-checkout"
+            >
+              <button onClick={() => toggleCart(false)}>Go To Checkout</button>
             </Link>
           </>
         )}
-        <button onClick={continueShopping}>Continue Shopping</button>
+        <Link to="shop" id="continue-shopping">
+          <button onClick={() => toggleCart(false)}>Continue Shopping</button>
+        </Link>
       </div>
     );
   }
@@ -157,7 +161,7 @@ function Header({
           )}
         </a>
       </nav>
-      <Arrow inViewHero={inViewHero} />
+      <Arrow />
       <Cart
         cartVisible={cartVisible}
         toggleCart={toggleCart}

@@ -107,7 +107,7 @@ function Shop() {
     <>
       <main>
         <section className="shop-container">
-          <h2>Shop</h2>
+          <h1>Music & More</h1>
           <div className="products-container">{Products}</div>
         </section>
       </main>

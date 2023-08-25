@@ -5,6 +5,10 @@ import Facebook from "../assets/Icons/facebook.svg";
 import Instagram from "../assets/Icons/instagram.svg";
 import Youtube from "../assets/Icons/youtube.svg";
 import Email from "../assets/Icons/email.svg";
+import FacebookWhite from "../assets/Icons/facebook_white.svg";
+import InstagramWhite from "../assets/Icons/instagram_white.svg";
+import YoutubeWhite from "../assets/Icons/youtube_white.svg";
+import EmailWhite from "../assets/Icons/email_white.svg";
 
 function Checkout() {
   const {
@@ -49,19 +53,19 @@ function Checkout() {
       <>
         <div className="subtotal">
           <span>Subtotal:</span>
-          <span>€ {subtotal.toFixed(2)}</span>
+          <span className="align-right">€ {subtotal.toFixed(2)}</span>
         </div>
         <div className="shipping">
           <span>Shipping:</span>
-          <span>€ {shipping.toFixed(2)}</span>
+          <span className="align-right">€ {shipping.toFixed(2)}</span>
         </div>
         <div className="vat">
           <span>VAT 19%:</span>
-          <span>€ {vat.toFixed(2)}</span>
+          <span className="align-right">€ {vat.toFixed(2)}</span>
         </div>
         <div className="total">
           <span>Total:</span>
-          <span>€ {total.toFixed(2)}</span>
+          <span className="align-right">€ {total.toFixed(2)}</span>
         </div>
       </>
     );
@@ -70,56 +74,60 @@ function Checkout() {
   return (
     <>
       <main>
-        <section className="content">
-          <h2>Checkout</h2>
+        <section className="checkout-container">
+          <h1>Checkout</h1>
           <div className="checkout-overview">
             <div className="articles">{Products}</div>
             <div className="sum">
               <Sum />
             </div>
-            <div className="overlay">
-              <p>Thanks for you interest in our products.</p>
-              <p>
-                This would be the page to finally check and afterwards place
-                your order. Unfortunately, this shop is not in operation yet.
-              </p>
-              <p>
-                If you want to buy our music we would like to redirect you to
-                our Bandcamp page. Alternatively you can send us a message on
-                your favourite platform.
-              </p>
-              <a href="https://stereola.bandcamp.com/">Bandcamp</a>
-              <a href="https://open.spotify.com/intl-de/album/1Ecu1ss9rh6ZbYVXcTqz6H">
-                Spotify
-              </a>
-              <a href="mailto:commander@nilpfred.de">
+          </div>
+          <div className="overlay">
+            <p>Thanks for you interest in our products.</p>
+            <p>
+              This would be the page to finally check and afterwards place your
+              order. Unfortunately, this shop is not in operation yet.
+            </p>
+            <p>
+              If you want to buy our music we would like to redirect you to our
+              Bandcamp page. Alternatively you can send us a message on your
+              favourite platform.
+            </p>
+            <a href="https://stereola.bandcamp.com/">Bandcamp</a>
+            <a href="https://open.spotify.com/intl-de/album/1Ecu1ss9rh6ZbYVXcTqz6H">
+              Spotify
+            </a>
+            <a href="mailto:commander@nilpfred.de">
+              <img
+                src={EmailWhite}
+                alt="Email icon"
+                width="32px"
+                className="email"
+              />
+              <span>commander@nilpfred.de</span>
+            </a>
+            <div className="links">
+              <a href="https://www.facebook.com/nilpfred">
                 <img
-                  src={Email}
-                  alt="Email icon"
-                  width="32px"
-                  className="email"
+                  src={FacebookWhite}
+                  alt="Facebook icon"
+                  className="facebook"
                 />
-                <span>commander@nilpfred.de</span>
               </a>
-              <div className="links">
-                <a href="https://www.facebook.com/nilpfred">
-                  <img
-                    src={Facebook}
-                    alt="Facebook icon"
-                    className="facebook"
-                  />
-                </a>
-                <a href="https://www.instagram.com/commander_nilpfred/">
-                  <img
-                    src={Instagram}
-                    alt="Instagram icon"
-                    className="instagram"
-                  />
-                </a>
-                <a href="https://www.youtube.com/results?search_query=commander+nilpfred">
-                  <img src={Youtube} alt="YouTube icon" className="youtube" />
-                </a>
-              </div>
+              <a href="https://www.instagram.com/commander_nilpfred/">
+                <img
+                  src={InstagramWhite}
+                  alt="Instagram icon"
+                  className="instagram"
+                />
+              </a>
+              <a href="https://www.youtube.com/results?search_query=commander+nilpfred">
+                <img
+                  src={YoutubeWhite}
+                  alt="YouTube icon"
+                  className="youtube"
+                />
+              </a>
             </div>
           </div>
         </section>

@@ -23,7 +23,6 @@ function App() {
   return (
     <>
       <Header
-        inViewHero={false}
         cartVisible={cartVisible}
         toggleCart={toggleCart}
         cart={cart}
