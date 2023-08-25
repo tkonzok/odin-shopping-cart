@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Header from "./Components/Header.jsx";
 import { Outlet } from "react-router-dom";
@@ -10,10 +10,7 @@ import "./styles/style.css";
 
 function App() {
   const [cartVisible, setCartVisible] = useState(false);
-  const [cart, setCart] = useState([
-    { id: 0, amount: 1 },
-    { id: 5, amount: 1 },
-  ]);
+  const [cart, setCart] = useState([]);
 
   function toggleCart(cartState) {
     setCartVisible(cartState);

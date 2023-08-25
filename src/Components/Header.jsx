@@ -46,7 +46,7 @@ function Header({
         <p>
           <b>{amount}x</b> {article.title}
         </p>
-        <p className="price">€ {article.price}</p>
+        <p className="price">€ {article.price * amount}</p>
         <button onClick={handleClick}>X</button>
       </div>
     );
@@ -81,7 +81,7 @@ function Header({
         let price = articles.find((article) => article.id === item.id).price;
         subtotal += price * item.amount;
       }
-      const shipping = 4.99;
+      const shipping = subtotal > 0 ? 4.99 : 0;
       const vat = Math.round((subtotal + shipping) * 19) / 100;
       const total = subtotal + shipping + vat;
 
@@ -89,11 +89,11 @@ function Header({
         <>
           <div className="subtotal">
             <span>Subtotal:</span>
-            <span>€ {subtotal}</span>
+            <span>€ {subtotal.toFixed(2)}</span>
           </div>
           <div className="shipping">
             <span>Shipping:</span>
-            <span>€ {shipping}</span>
+            <span>€ {shipping.toFixed(2)}</span>
           </div>
           <div className="vat">
             <span>VAT 19%:</span>
@@ -101,7 +101,7 @@ function Header({
           </div>
           <div className="total">
             <span>Total:</span>
-            <span>€ {total}</span>
+            <span>€ {total.toFixed(2)}</span>
           </div>
         </>
       );
@@ -119,7 +119,9 @@ function Header({
             <div className="sum">
               <Sum />
             </div>
-            <button>Go To Checkout</button>
+            <Link to="checkout" cart={cart} articles={articles}>
+              <button>Go To Checkout</button>
+            </Link>
           </>
         )}
         <button onClick={continueShopping}>Continue Shopping</button>
@@ -137,6 +139,7 @@ function Header({
             width="48px"
             className="home-icon"
           />
+          <span>Home</span>
         </Link>
         <Link to="shop">
           <img
@@ -145,6 +148,7 @@ function Header({
             width="48px"
             className="shop-icon"
           />
+          <span>Shop</span>
         </Link>
         <a className="cart-icon" onClick={handleToggleCart}>
           <img src={CartOutline} alt="Cart icon" width="48px" />
