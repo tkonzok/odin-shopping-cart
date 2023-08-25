@@ -41,15 +41,6 @@ function Product({ article, addToCart }) {
         <p className="stock limited">Only {article.stock} items left</p>
       )}
       {article.stock == 0 && <p className="stock sold-out">Out of stock</p>}
-      <p className="rating">
-        <img src={Star} width="24px"></img>{" "}
-        <span>{article.rating.rate}/5 </span>
-        <span className="count">
-          {" ("}
-          {article.rating.count}
-          {")"}
-        </span>
-      </p>
       <div className="amount">
         <button onClick={handleClickDecrease}>
           <img src={MinusCircle}></img>

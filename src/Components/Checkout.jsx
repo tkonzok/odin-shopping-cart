@@ -1,6 +1,8 @@
 import "../styles/normalize.css";
 import "../styles/style.css";
+import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
 import Facebook from "../assets/Icons/facebook.svg";
 import Instagram from "../assets/Icons/instagram.svg";
 import Youtube from "../assets/Icons/youtube.svg";
@@ -9,12 +11,20 @@ import FacebookWhite from "../assets/Icons/facebook_white.svg";
 import InstagramWhite from "../assets/Icons/instagram_white.svg";
 import YoutubeWhite from "../assets/Icons/youtube_white.svg";
 import EmailWhite from "../assets/Icons/email_white.svg";
+import MusicWhite from "../assets/Icons/music_white.svg";
+import MicWhite from "../assets/Icons/microphone_white.svg";
 
 function Checkout() {
   const {
     cart: [cart, setCart],
     articles: articles,
   } = useOutletContext();
+
+  const [overlayVisible, setOverlayVisible] = useState(true);
+
+  const handleClickDismiss = () => {
+    setOverlayVisible(false);
+  };
 
   function CartItem({ amount, article }) {
     return (
@@ -81,8 +91,13 @@ function Checkout() {
             <div className="sum">
               <Sum />
             </div>
+            <Link to="home">
+              <button className="buy-now">Buy Now</button>
+            </Link>
           </div>
-          <div className="overlay">
+          <div
+            className={overlayVisible ? "overlay visible" : "overlay hidden"}
+          >
             <p>Thanks for you interest in our products.</p>
             <p>
               This would be the page to finally check and afterwards place your
@@ -93,9 +108,23 @@ function Checkout() {
               Bandcamp page. Alternatively you can send us a message on your
               favourite platform.
             </p>
-            <a href="https://stereola.bandcamp.com/">Bandcamp</a>
+            <a href="https://stereola.bandcamp.com/">
+              <img
+                src={MicWhite}
+                alt="Email icon"
+                width="32px"
+                className="email"
+              />
+              <span>Bandcamp</span>
+            </a>
             <a href="https://open.spotify.com/intl-de/album/1Ecu1ss9rh6ZbYVXcTqz6H">
-              Spotify
+              <img
+                src={MusicWhite}
+                alt="Email icon"
+                width="32px"
+                className="email"
+              />
+              <span>Spotify</span>
             </a>
             <a href="mailto:commander@nilpfred.de">
               <img
@@ -129,6 +158,9 @@ function Checkout() {
                 />
               </a>
             </div>
+            <button className="dismiss" onClick={handleClickDismiss}>
+              Hide Message
+            </button>
           </div>
         </section>
       </main>
