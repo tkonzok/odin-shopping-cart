@@ -71,15 +71,13 @@ function Home() {
               kleinen Racker!
             </p>
           </div>
-          <div className="center-container">
-            <div className="album-img-container">
-              <SlidingInAlbum />
-            </div>
-            <div className="link-to-shop">
-              <Link to="shop">
-                <button>To the Shop</button>
-              </Link>
-            </div>
+          <div className="album-img-container">
+            <SlidingInAlbum />
+          </div>
+          <div className="link-to-shop">
+            <Link to="shop">
+              <button>To the Shop</button>
+            </Link>
           </div>
           <div>
             <p>
