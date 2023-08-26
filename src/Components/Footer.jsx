@@ -1,12 +1,17 @@
 import "../styles/normalize.css";
 import "../styles/style.css";
+import Github from "../assets/Icons/github.svg";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <>
       <footer>
         <div className="footer-container">
-          <p>Commander Nilpfred</p>
+          <a href="https://github.com/tkonzok">
+            <img src={Github} alt="Github Icon" /> Developed by Tobias Konzok
+          </a>
+          <p>© Copyright {currentYear} Tobias Konzok. All rights reserved.</p>
         </div>
       </footer>
     </>

@@ -9,7 +9,6 @@ import CartOutline from "../assets/Icons/cart-outline.svg";
 import ArrowUp from "../assets/Icons/arrow-up-bold-circle.svg";
 
 function Header({
-  inViewHero,
   cartVisible,
   toggleCart,
   cart,
@@ -67,11 +66,7 @@ function Header({
         />
       );
     }
-    /*
-    const continueShopping = () => {
-      toggleCart(false);
-    };
-*/
+
     const Sum = () => {
       let subtotal = 0;
       for (let item of cart) {

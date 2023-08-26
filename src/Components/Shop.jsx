@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import "../styles/normalize.css";
 import "../styles/style.css";
 import MinusCircle from "../assets/Icons/minus-circle.svg";
 import PlusCircle from "../assets/Icons/plus-circle.svg";
-import Star from "../assets/Icons/star_yellow.svg";
 import CartArrowDown from "../assets/Icons/cart-arrow-down.svg";
 
 function Product({ article, addToCart }) {
@@ -80,7 +79,6 @@ function Shop() {
     } else {
       setCart([...cart, { id: article.id, amount: amount }]);
     }
-    setCartVisible(true);
   };
 
   let Products = [];

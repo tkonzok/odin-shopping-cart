@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import "../styles/normalize.css";
 import "../styles/style.css";
-import { useInView } from "react-intersection-observer";
 import Album512 from "../assets/Images/album_512.png";
 
 function Headlines() {
-  const { ref, inView } = useInView({
+  const { refHeadline, inViewHeadline } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
@@ -15,7 +15,7 @@ function Headlines() {
 
   async function startNewInterval(msec) {
     await new Promise((resolve) => setTimeout(resolve, msec));
-    if (headline < 2) {
+    if (headline < 1) {
       setHeadline(headline + 1);
     } else {
       setHeadline(0);
@@ -24,13 +24,10 @@ function Headlines() {
 
   useEffect(() => {
     startNewInterval(5000);
-  }, [headline, inView]);
+  }, [headline]);
 
   return (
-    <div
-      ref={ref}
-      className={inView ? "headlines fade-in delay1" : "headlines"}
-    >
+    <div ref={refHeadline} className="headlines">
       <div
         className={headline === 0 ? "headline visible" : "headline invisible"}
       >
@@ -40,11 +37,6 @@ function Headlines() {
         className={headline === 1 ? "headline visible" : "headline invisible"}
       >
         <h1>Commercial Nilpfred</h1>
-      </div>
-      <div
-        className={headline === 2 ? "headline visible" : "headline invisible"}
-      >
-        <h1>The Shop</h1>
       </div>
     </div>
   );

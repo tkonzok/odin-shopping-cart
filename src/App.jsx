@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
 import { useState } from "react";
-import { useInView } from "react-intersection-observer";
 import Header from "./Components/Header.jsx";
 import { Outlet } from "react-router-dom";
 import Footer from "./Components/Footer.jsx";

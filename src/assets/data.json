@@ -22,7 +22,7 @@
       "title": "Tyrannopotamus Rex (MC)",
       "subtitle": "Limitierte Kassette",
       "price": 10.0,
-      "stock": 4,
+      "stock": 3,
       "published": 2021,
       "description": "Alles DIY, soviel Gebastel.... Es ist alles für Dich vorbereitet, nur Spulen musst Du selbst! Enthält unbegrenztes Streaming von Tyrannopotamus Rex über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
       "category": "music",
@@ -38,7 +38,7 @@
       "title": "Tyrannopotamus Rex (Fake LP)",
       "subtitle": "Fake Platte + Digitales Album",
       "price": 15.0,
-      "stock": 5,
+      "stock": 4,
       "published": 2021,
       "description": "Sieht aus wie eine LP, mit tollem Cover und allem Pipapo. Sieht spitzenmäßig aus im Plattenschrank. Ist auch VInyl drin, aber kein Tyrannopotamus Rex drauf. Nur für Poser. Aber das richtig! Enthält unbegrenztes Streaming von Tyrannopotamus Rex über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
       "category": "music",
@@ -82,18 +82,82 @@
     },
     {
       "id": 5,
-      "artist": "Schlager Bernd",
+      "artist": "SchlagerBernd",
       "title": "Die Sprache der Liebe",
-      "subtitle": "Example Subtitles",
-      "price": 4.99,
+      "subtitle": "Die 1 Platte mit den 8 Sprachen der Liebe",
+      "price": 5,
       "stock": 0,
       "published": 2013,
       "description": "Die 1 Platte mit den 8 Sprachen der Liebe",
       "category": "music",
       "image": "https://f4.bcbits.com/img/a2840852962_16.jpg",
       "rating": {
-        "rate": 3.2,
-        "count": 9
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": 6,
+      "artist": "SchlagerBernd",
+      "title": "Mit romantischen Grüßen",
+      "subtitle": "Mit physischen romantischen Grüßen",
+      "price": 1.5,
+      "stock": 3,
+      "published": 2013,
+      "description": "Das Original im Schuber zum aus dem Schuber holen und aus dem Häuschen geraten vor Glück.",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/a3883321039_10.jpg",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": 7,
+      "artist": "SchlagerBernd",
+      "title": "Fiesta dell'Amor",
+      "subtitle": "Digitales Album. Tonträger sind von gestern!",
+      "price": 2,
+      "stock": 999,
+      "published": 2014,
+      "description": "Hier gibt's den Download auf den Rechner und das astreine, auf hochwertigem 100% Recyclingpapier gedruckte Offline-Cover im Superformat. Zum in den Plattenschrank stellen und immer wieder draufgucken und stolz drauf sein!",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/a0175510593_16.jpg",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": 8,
+      "artist": "SchlagerBernd",
+      "title": "Du kannst nicht immer 17 sein",
+      "subtitle": "Digitale Single",
+      "price": 1,
+      "stock": 999,
+      "published": 2022,
+      "description": "Enthält unbegrenztes Streaming über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/a2964585836_16.jpg",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": 9,
+      "artist": "SchlagerBernd",
+      "title": "Sch​ö​nes sonniges Weihnachtswetter",
+      "subtitle": "Digitale Single",
+      "price": 1,
+      "stock": 999,
+      "published": 2022,
+      "description": "Enthält unbegrenztes Streaming über die kostenlose Bandcamp-App und außerdem den hochwertigen Download als MP3, FLAC und mehr.",
+      "category": "music",
+      "image": "https://f4.bcbits.com/img/a2595889019_16.jpg",
+      "rating": {
+        "rate": 0,
+        "count": 0
       }
     }
   ]

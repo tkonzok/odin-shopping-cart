@@ -2,7 +2,7 @@ import "../styles/normalize.css";
 import "../styles/style.css";
 import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Facebook from "../assets/Icons/facebook.svg";
 import Instagram from "../assets/Icons/instagram.svg";
 import Youtube from "../assets/Icons/youtube.svg";
@@ -91,7 +91,7 @@ function Checkout() {
             <div className="sum">
               <Sum />
             </div>
-            <Link to="home">
+            <Link to="..">
               <button className="buy-now">Buy Now</button>
             </Link>
           </div>
