@@ -67,6 +67,10 @@ function Shop() {
     cartVisibility: [cartVisible, setCartVisible],
   } = useOutletContext();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const addToCart = (article, amount) => {
     if (cart.filter((item) => item.id === article.id).length > 0) {
       setCart(

@@ -21,6 +21,8 @@
 }
 
 html {
+  height: 100vh;
+  height: 100lvh;
   height: -webkit-fill-available;
 }
 

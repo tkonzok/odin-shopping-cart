@@ -87,7 +87,7 @@ a > img:hover {
   width: 2.5rem;
   height: 2.5rem;
   position: fixed;
-  z-index: 905;
+  z-index: 80;
   bottom: 10%;
   right: 5%;
   cursor: pointer;
@@ -160,8 +160,14 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 28px;
+  font-size: 24px;
   gap: 8px;
+}
+
+@media (min-width: 600px) {
+  nav a {
+    font-size: 28px;
+  }
 }
 
 nav .cart-icon {
@@ -195,15 +201,21 @@ nav .cart-icon {
   top: var(--navbar-height);
   bottom: var(--footer-height);
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   right: 0;
   width: min(90vw, 480px);
   min-height: calc(100vh - var(--navbar-height));
   padding: 32px;
   gap: 16px;
-  z-index: 99;
+  z-index: 95;
   background-color: #fff;
   color: #000;
   transition: transform 2s ease-in-out;
+}
+
+.cart-sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .cart-sidebar.visible {
@@ -814,7 +826,7 @@ iframe {
 .overlay {
   position: absolute;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   padding: var(--navbar-height) max(10vw, calc(50% - 600px + 10vw)) 0;
   background-color: #000000dd;
@@ -823,6 +835,7 @@ iframe {
   flex-direction: column;
   text-align: center;
   font-size: 12px;
+  z-index: 10;
 }
 
 .overlay.visible {
@@ -905,9 +918,11 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 12px;
   font-family: "Open Sans", sans-serif;
   color: #000;
   background-color: #fff;
+  z-index: 99;
 }
 
 .foooter-container {
@@ -920,7 +935,6 @@ footer {
 }
 
 .footer-container a {
-  font-size: 16px;
   font-weight: 700;
   text-align: center;
   margin: 0;

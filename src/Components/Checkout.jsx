@@ -33,7 +33,7 @@ function Checkout() {
         <p>
           <b>{amount}x</b> {article.title}
         </p>
-        <p className="price">€ {article.price * amount}</p>
+        <p className="price">€ {(article.price * amount).toFixed(2)}</p>
       </div>
     );
   }

@@ -42,7 +42,7 @@ function Header({
         <p>
           <b>{amount}x</b> {article.title}
         </p>
-        <p className="price">€ {article.price * amount}</p>
+        <p className="price">€ {(article.price * amount).toFixed(2)}</p>
         <button onClick={handleClick}>X</button>
       </div>
     );
