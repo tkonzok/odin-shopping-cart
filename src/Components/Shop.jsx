@@ -52,8 +52,8 @@ function Product({ article, addToCart }) {
       <div
         className={article.stock == 0 ? "add-to-cart sold-out" : "add-to-cart"}
       >
-        <button onClick={handleClickAddToCart}>
-          <img src={CartArrowDown}></img> <span>ADD TO CART</span>
+        <button onClick={handleClickAddToCart} data-testid="add-to-cart-button">
+          <img src={CartArrowDown} alt="cart"></img> <span>ADD TO CART</span>
         </button>
       </div>
     </div>

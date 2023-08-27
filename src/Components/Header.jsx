@@ -152,7 +152,9 @@ function Header({
         <a className="cart-icon" onClick={handleToggleCart}>
           <img src={CartOutline} alt="Cart icon" width="48px" />
           {cart.length > 0 && (
-            <span className="number-articles">{cart.length}</span>
+            <span className="number-articles" data-testid="number-articles">
+              {cart.length}
+            </span>
           )}
         </a>
       </nav>

@@ -6,10 +6,10 @@ import Shop from "./Shop.jsx";
 describe("Shop component", () => {
   it("renders correct headline", () => {
     render(<Shop />);
-    expect(screen.getByRole("heading").textContent).toMatch(/Shop/i);
+    expect(screen.getByRole("heading").textContent).toMatch(/Music & More/i);
   });
 
-  it("renders cart 0 on load", () => {
+  it("renders page on load", () => {
     const { container } = render(<Shop />);
     expect(container).toMatchSnapshot();
   });
@@ -18,11 +18,15 @@ describe("Shop component", () => {
     const user = userEvent.setup();
 
     render(<Shop />);
-    const button = screen.getByRole("button", { name: "Add Item" });
+    const adToCartButton = screen.getByTestId("add-to-cart-button");
 
-    await user.click(button);
+    await user.click(adToCartButton);
 
-    expect(screen.getByText(/Cart:/i).textContent).toMatch(/Cart: 1/i);
+    expect(screen.getByTestId("number-articles").textContent).toMatch(/1/i);
+
+    expect(
+      screen.getByRole("button", { name: "Go To Checkout" })
+    ).toBeInTheDocument();
     screen.debug();
   });
 });

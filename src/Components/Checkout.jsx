@@ -26,6 +26,10 @@ function Checkout() {
     setOverlayVisible(false);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   function CartItem({ amount, article }) {
     return (
       <div className="cart-item">
