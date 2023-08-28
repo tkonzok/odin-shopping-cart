@@ -11,7 +11,7 @@ function Footer() {
           <a href="https://github.com/tkonzok">
             <img src={Github} alt="Github Icon" /> Developed by Tobias Konzok
           </a>
-          <p>© Copyright {currentYear} Tobias Konzok. All rights reserved.</p>
+          <p>© {currentYear} Tobias Konzok</p>
         </div>
       </footer>
     </>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 import "../styles/normalize.css";
 import "../styles/style.css";
 import House from "../assets/Icons/home.svg";
@@ -68,11 +69,15 @@ function Header({
     }
 
     const Sum = () => {
-      let subtotal = 0;
-      for (let item of cart) {
-        let price = articles.find((article) => article.id === item.id).price;
-        subtotal += price * item.amount;
-      }
+      const subtotal = useMemo(() => {
+        return cart.reduce(
+          (total, item) =>
+            total +
+            articles.find((article) => article.id === item.id).price *
+              item.amount,
+          0
+        );
+      }, [cart]);
       const shipping = subtotal > 0 ? 4.99 : 0;
       const vat = Math.round((subtotal + shipping) * 19) / 100;
       const total = subtotal + shipping + vat;
